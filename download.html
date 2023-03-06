@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: rgb(240, 240, 240) !important;   
+  --clr-secondary: rgb(34, 34, 34) !important;
+  --clr-accent: #644697 !important;
+  --clr-accent-light: hsl(271deg 67% 74% / 74%) !important;
+  
+  
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-plus: 'Arial', sans-serif;
+  
+  --border-radius: 15px;
+  
+}
+
+.dark-theme {
+  --clr-primary: rgb(34, 34, 34) !important;   
+  --clr-secondary: rgb(240, 240, 240) !important;
+  --clr-accent: rgb(127 96 178);
+  --clr-accent-light: rgb(127 96 178) !important;
+}
+
+body {
+  margin: 0;
+  background-color: var(--clr-primary);
+  transition: all 0.2s; /* Needs for proper Dark Mode toggling */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+::-moz-selection { /* Code for Firefox */
+  background-color: var(--clr-accent-light);
+  color: #f3f3f3;
+}
+::selection {
+  background-color: var(--clr-accent-light);
+  color: #f3f3f3;
+}
+
+/* Navigation Bar */
+
+.nav {
+  background-color: rgba(243, 243, 243, 0.3);
+  box-shadow: 0 0 2rem rgba(243, 243, 243, 0.3);
+  margin: 0;
+}
+
+.nav__container {
+  width: 90%;
+  max-width: 1500px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__plus img, nav__dark img {
+  max-width: 3rem;
+}
+
+.nav__logo img {
+  max-width: 8rem;
+  padding: 0.45rem;
+}
+
+.nav__logo, .nav__plus, .nav__dark {
+  transition: 0.2s;
+}
+
+.nav__logo:hover, .nav__plus:hover, #darkModeToggle:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#darkModeToggle {
+  border: 0;
+  background-color: rgba(0,0,0,0);
+}
+
+
+/* Typography */
+h1, h2, h3, h4, h5, p {
+color: var(--clr-secondary);
+font-family: var(--ff-primary);
+}
+
+p {
+  line-height: 1.4;
+}
+h1, h2, h3, h4, h5 {
+  margin-bottom: 0;
+}
+
+h3 {
+  margin-block: 0.5em;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text--small {
+font-size: 0.8rem;}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--clr-accent);
+  font-family: var(--ff-primary);
+  transition: 0.15s;
+}
+
+a:hover {
+  color: dodgerblue;
+}
+
+.link--img {
+  display: flex;
+}
+.link--img > img {
+  transition: 0.2s;
+}
+
+.link--img> img:hover {
+  transform: scale(1.05);
+}
+
+/*Buttons */
+
+.btn {
+  border: 0;
+  border-radius: 25px;
+  padding: 0.5rem 2rem;
+  font-size: 1.3rem;
+  font-family: var(--ff-primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn--primary {
+  background-color: var(--clr-secondary);
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+}
+
+.btn--primary:hover {
+background-color: var(--clr-primary);
+color: var(--clr-secondary);
+border: 1px solid var(--clr-secondary);}
+
+.btn--secondary {
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+}
+
+.btn--secondary:hover {
+background-color: var(--clr-secondary);
+color: var(--clr-primary);}
+
+/* Images */
+img {
+  max-width: 100%;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+.container--small {
+  max-width: 900px;
+}
+
+
+/* Flexbox */
+
+.flex {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@media screen and (min-width: 900px) {
+  .flex {
+    flex-direction: row;
+  }
+}
+
+/*Hero Section */
+
+.hero {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.hero .btn {
+    margin-top: 1rem;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.hero__img img {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.hero__text {
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 900px) {
+  .hero__content {
+    padding: 5rem 1rem;
+  }
+}
+
+/* Cards */
+
+.card {
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0 0 0.5rem #ccc;
+  overflow: hidden;
+  padding-block: 0.5rem;
+}
+
+.card > * {
+  flex-basis: 100%;
+}
+
+.card__content {
+  padding: 0.5rem;
+  padding-left: 1rem;
+}
+
+.card {
+  flex-direction: row;
+  max-width: 600px;
+}
+
+.card__img {
+  align-self: center;
+  flex-basis: 100%;
+  padding-left: 0.25rem;
+}
+
+.card__img img {
+   object-fit: cover;
+}
+
+.card, .card__img {
+  border-radius: 10px;
+}
+
+.card__text {
+  font-size: 0.9rem;
+}
+.card--blog {
+  background-color: #f8f8f8;
+}
+
+.dark-theme .card--blog {
+  background-color: var(--clr-primary);
+}
+
+@media screen and (max-width: 500px) {
+    .card__img img {
+     aspect-ratio: 4 / 3;
+}
+}
+
+@media screen and (min-width: 750px) {
+  .card {
+    flex-direction: column;
+    max-width: 250px;
+  }
+  
+  .card__content {
+    justify-self: flex-start;
+  }
+  
+  .card__img {
+    width: 300px;
+    flex: 1 1 40%;
+    padding-left: 0;
+  }
+  
+ .card__img img {
+   object-fit: cover;
+  }
+}
+
+/* Waiber Blog Section */
+
+.section--blog {
+  background-color: #d2bddd;
+  padding-block: 1rem;
+  border-block: 5px solid rgb(166 104 206);
+}
+.section--blog-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-inline: 0.5rem;
+}
+
+.section--blog-wrapper > .card {
+    flex-basis: 100%;
+}
+
+.section--blog-wrapper .section__title {
+display: none;}
+
+.section--blog-wrapper .section__title--img {
+  max-width: 10rem;
+  justify-self: flex-start;
+}
+
+@media screen and (min-width: 750px) {
+  .section--blog-wrapper {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+  
+  .section--blog-wrapper .card {
+    margin: 1rem 0.25rem;
+  }
+  
+  .section--blog-wrapper .section__title--img {
+  max-width: 10rem;
+  align-self: center;
+}
+}
+
+/* Portfolio Section */
+.stacked {
+  display: grid;
+  place-items: center;
+}
+
+.stacked > * {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.section--portfolio {
+  background-color: #f3f3f3;
+}
+
+.portfolio__img {
+  z-index: -1;
+    width: 100%;
+  height: 100%;
+  max-height: 15rem;
+  object-fit: cover;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+.portfolio__img img {
+  max-width: 1000px;
+  margin-inline: auto;
+  min-height: 100%;
+}
+
+.portfolio__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.portfolio__title {
+/*   color: #F09D00; */
+  color: #275CCE;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px white;
+  font-size: 2rem;
+/*   text-decoration: underline; */
+}
+
+.btn--portfolio {
+  transform: scale(0.8);
+  margin-top: 0.5rem;
+}
+
+
+@media screen and (min-width: 500px) {
+  .portfolio__title {
+font-size: 2.1rem;}
+}
+
+@media screen and (min-width: 700px) {
+  .portfolio__title {
+    font-size: 3rem;
+  }
+  
+  .btn--portfolio {
+    transform: scale(1);
+  }
+  
+}
+
+/* Footer */
+
+.footer {
+background: rgb(2,0,36);
+background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(22,22,23,0.9963772129945728) 76%, rgba(126,86,193,1) 99%, rgba(126,86,193,1) 99%, rgba(126,86,193,1) 99%, rgba(126,86,193,1) 100%);
+  width: 100%;
+}
+
+.footer-wrapper {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.footer__links-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.footer__links a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #f2f2f2;
+  margin-bottom: 0.5rem;
+}
+
+.footer__links a:hover {
+  color: dodgerblue;
+}
+
+.footer__logo {
+  max-width: 80px;
+  margin-bottom: 1rem;
+  align-self: center;
+  transition: 0.2s;
+}
+
+.footer__logo:hover {
+  transform: scale(1.05);
+}
+
+.footer__copyright {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__copyright p {
+  color: #f4f4f4;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 550px ) {
+  .footer__logo {
+    max-width: 100px;
+    margin-bottom: 2rem;
+  }
+  
+  .footer__links-wrapper {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 800px ) {
+    .footer-wrapper {
+    flex-direction: row;
+  }
+  
+    .footer__logo {
+    align-self: flex-start;
+  }
+  
+  .footer__links a {
+    font-size: 1rem;
+  }
+}
+
+/* Portfolio */
+
+
+.portfolio__header {
+    text-align: center;
+}
+.portfolio__heading {
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  font-size: 3rem;
+}
+
+.collapsible__chevron {
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  background-color: tomato;
+  display: block;
+}
+
+
+
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-primary);
+  cursor: pointer;
+}
+
+.collapsible__heading {
+margin-block: 0;
+  padding: 0.5rem;
+}
+
+.collapsible__content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in;
+}
+
+.collapsible--expanded > .collapsible__content {
+  opacity: 1;
+  max-height: 500vh;
+  padding: 0.5rem;
+}
+
+.collapsible--expanded.collapsible > .collapsible__header > .collapsible__chevron  {
+  background-color: dodgerblue;
+}
+
+.portfolio {
+  width: 90%;
+  max-width: 900px;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+  min-height: 90vh;
+}
+
+.portfolio__header {
+  margin: 6rem auto 6rem;
+}
+
+.portfolio__text {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.portfolio__comic-series {
+  padding: 1rem;
+  border: 5px solid var(--clr-secondary);
+   border-radius: var(--border-radius);
+  margin-top: 2rem;
+}
+
+
+
+.portfolio__comic-vol {
+padding: 0.8rem;
+padding-left: 1rem;
+border: 3px solid var(--clr-accent);
+  
+  border-radius: var(--border-radius);}
+
+
+.portfolio__comic-issue {
+  padding: 1rem;
+  border: 3px solid var(--clr-secondary);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.collapsible--expanded.portfolio__comic-issue > .collapsible__header {
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--clr-secondary);
+}
+
+.portfolio__comic-issue, .portfolio__comic-content {
+  padding-left: 2rem;
+  background-color: var(--clr-primary);
+}
+
+.collapsible--expanded > .portfolio__comic-issue {
+ margin-bottom: 0;
+}
+
+
+.portfolio__comic-content {
+display: flex;
+flex-direction: column;
+}
+
+
+.portfolio__comic-img {
+  max-width: 400px;
+  align-self: center;
+}
+
+.portfolio__text {
+  padding-right: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .portfolio__comic-content {
+    flex-direction: row;
+  }
+  .portfolio__comic-img {
+    justify-content: flex-start;
+  }
+}
+
+/* Grid */
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid__img {
+  justify-self: center;
+  align-self: center;
+  max-width: 50rem !important;
+}
+
+.grid__text {
+  border-radius: var(--border-radius);
+  background-color: var(--clr-primary--contrast);
+  max-width: 90%;
+  margin-inline: auto;
+}
+.grid__text h2 {
+  color: var(--clr-accent);
+}
+
+
+
+@media screen and (min-width: 680px) {
+  
+
+  .grid--1x2 {
+grid-template-columns: auto auto;}
+
+  .grid__text {
+    padding-inline: 2rem;
+  }
+
+.grid--reverse > .grid__img {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+}
+/* Blocks */
+
+.block {
+  padding-block: 3rem;
+}
+
+.block--dark {
+  background-color: var(--clr-secondary);
+}
+
+.block--dark p {
+color: var(--clr-primary);}
+
+.block--dark .heading {
+  color: var(--clr-accent-light);
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split {
+  float: right;
+  margin-left: 700px;
+  background-color: #04AA6D;
+  color: white;
+}
+section {
+
+height: 100vh;
+
+width: 100%;
+
+display: grid;
+
+place-items: center;
+
+}
+
+.row {
+
+display: flex;
+
+flex-wrap: wrap;
+
+}
+
+.column {
+
+width: 100%;
+
+padding: 0 1em 1em 1em;
+
+text-align: center;
+
+}
+
+.card {
+
+width: 100%;
+
+height: 100%;
+
+padding: 2em 1.5em;
+
+background: linear-gradient(#ffffff 50%, #2c7bfe 50%);
+
+background-size: 100% 200%;
+
+background-position: 0 2.5%;
+
+border-radius: 5px;
+
+box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+
+cursor: pointer;
+
+transition: 0.5s;
+
+}
+
+h3 {
+
+font-size: 20px;
+
+font-weight: 600;
+
+color: #1f194c;
+
+margin: 1em 0;
+
+}
+
+p {
+
+color: #575a7b;
+
+font-size: 15px;
+
+line-height: 1.6;
+
+letter-spacing: 0.03em;
+
+}
+
+.icon-wrapper {
+
+background-color: #2c7bfe;
+
+position: relative;
+
+margin: auto;
+
+font-size: 50px;
+
+height: 7.5em;
+
+width: 2.0em;
+
+color: #ffffff;
+
+border-radius: 50%;
+
+display: grid;
+
+place-items: center;
+
+transition: 0.5s;
+
+}
+
+.card:hover {
+
+background-position: 0 100%;
+
+}
+
+.card:hover .icon-wrapper {
+
+background-color: #ffffff;
+
+color: #2c7bfe;
+
+}
+
+.card:hover h3 {
+
+color: #ffffff;
+
+}
+
+.card:hover p {
+
+color: #f0f0f0;
+
+}
+
+@media screen and (min-width: 768px) {
+
+section {
+
+  padding: 0 2em;
+
+}
+
+.column {
+
+  flex: 0 50%;
+
+  max-width: 50%;
+
+}
+
+}
+
+@media screen and (min-width: 992px) {
+
+section {
+
+  padding: 1em 3em;
+
+}
+
+.column {
+
+  flex: 0 0 33.33%;
+
+  max-width: 33.33%;
+
+}
+
+}
+    </style>
+    <header>
+        <nav class="nav">
+          <div class="nav__container">
+            <div class="topnav">
+              <a class="active" href="index.html">Home</a>
+              <a href="howtouse.html">How to use</a>
+              <a href="#">FAQs</a>
+              <a href="#" class="split">Contribute</a>
+            </div>
+          <button id="darkModeToggle"><img src="https://res.cloudinary.com/waibercomics/image/upload/v1645947106/Waiber%20Comics%20Site%20/ymimthuve6l0dphv6uc1.png"></button>
+            </div>
+        </nav>
+      </header>
+    
+      <main id="page--about">
+    <section>
+        <div class="headingtop" >
+        <h1 style="text-align: center;font-size: 40px;">Install the web extension</h1>
+        <p style="text-align: center;font-size: 20px;">The web extension is the easiest way to run a Snowflake proxy. Simply install it on Firefox or Chrome, enable the extension, and watch the icon turn green when a user connects through your proxy!</p>
+        </div>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+                <i class="bi bi-browser-firefox"></i>
+            </div>
+            <h3>Install in Firefox</h3>
+            <p>
+             Just click on download button <br><br>
+              <button style="background-color: #3fefaf; border-radius: 40px 40px 70px 40px; padding: 20px;width: 150px; ">
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/torproject-snowflake/">Download</a>
+              </button>
+            </p>
+          </div>
+
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+                <i class="bi bi-browser-chrome"></i>
+            </div>
+            <h3>Install in Chrome</h3>
+            <p>
+                Just click on download button <br><br>
+                 <button style="background-color: #3fefaf; border-radius: 40px 40px 70px 40px; padding: 20px;width: 150px; ">
+                   <a href="https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie">Download</a>
+                 </button>
+               </p>
+          </div>
+
+        </div>
+        <div class="column">
+          <div class="card">
+            <div class="icon-wrapper">
+                <i class="bi bi-browser-edge"></i>
+            </div>
+            <h3>Install in Edge</h3>
+            <p>
+                Just click on download button <br><br>
+                 <button style="background-color: #3fefaf; border-radius: 40px 40px 70px 40px; padding: 20px;width: 150px; ">
+                   <a href="https://chrome.google.com/webstore/detail/snowflake/mafpmfcccpbjnhfhjnllmmalhifmlcie">Download</a>
+                 </button>
+               </p>
+          </div>
+        </div>
+      </div>
+    </section> 
+      </main>
+        
+          <footer class="footer">
+        <div class="footer-wrapper">
+          <div class="footer__links-wrapper">
+        <div class="footer__copyright">   
+          <p>	&copy; The Tor Project 2023</p>
+            
+          </div>
+      
+          
+      </footer>
+      <script>
+        // Collapsible
+
+const collapsibles = document.querySelectorAll('.collapsible__header');
+
+collapsibles.forEach((item) =>
+                    item.addEventListener("click", function () {
+  this.parentElement.classList.toggle("collapsible--expanded");
+}))
+
+
+    var darkModeToggle = document.getElementById("darkModeToggle");
+    
+    if(localStorage.getItem("theme") == null){
+    localStorage.setItem("theme", "light");
+    }
+    
+    let localData = localStorage.getItem("theme");
+    
+    if(localData == "light"){
+document.body.classList.remove("dark-theme");
+}
+    
+    if(localData == "dark"){
+document.body.classList.add("dark-theme");
+}
+        
+    darkModeToggle.onclick = function(){
+    	document.body.classList.toggle("dark-theme");
+        if(document.body.classList.contains("dark-theme")){
+        localStorage.setItem("theme", "dark");
+        }else{
+        localStorage.setItem("theme", "light");
+        }
+	}
+      </script>
+</body>
+</html>
