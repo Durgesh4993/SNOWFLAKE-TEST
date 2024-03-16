@@ -4,7 +4,7 @@ Snowflake is a system that allows people from all over the world to access censo
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## SOME SCREENSHORTS -
 
-Home page 
+Home page:
 
 ![image](https://user-images.githubusercontent.com/98798977/223145399-83500127-e7de-416f-aa17-f5201ab8b953.png)
 
@@ -14,11 +14,13 @@ Home page  with navigation bar -
 ![image](https://user-images.githubusercontent.com/98798977/223145801-5e73cf07-2f64-4c44-883f-51322d63a383.png)
 
 **********************************************************************************************************************************************************************************
+
 Download page -
 
 ![image](https://user-images.githubusercontent.com/98798977/223145918-b99676b9-eb46-4053-bdce-eeccfe2d9b31.png)
 
 **********************************************************************************************************************************************************************************
+
 How to use Snowflake page - 
 
 ![image](https://user-images.githubusercontent.com/98798977/223146206-0c55a6a7-237e-4b76-bd7d-c55af4bf0306.png)
